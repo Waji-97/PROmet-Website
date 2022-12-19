@@ -9,7 +9,7 @@ from base.forms import BaseCreateForm, BaseUpdateForm
 # Create your views here.
 
 def index(request):
-  return render(request, 'index.html')
+  return render(request, 'main/main.html')
 
 class List(ListView):
   model = Base
