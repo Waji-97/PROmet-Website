@@ -5,7 +5,7 @@
       <div class="row">
         <div class="card col-lg-4">
           <div class="card-body">
-            <h1 class="text-center mt-2 mb-5">SIGNUP</h1>
+            <h1 class="text-center mt-2 mb-5" style="color: black;">SIGNUP</h1>
             <form method="POST" class="post-form" action="{% url 'acc:signup' %}">
               {% csrf_token %}
               {% include "errors.html" %}

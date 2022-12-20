@@ -4,7 +4,7 @@
   <section class="board_detail-block">
     <div class="container mt-3">
     <div class="card border-dark mb-3">
-      <div class="card-header">
+      <div class="card-header" style="color: black;">
         <h4 class="pt-1">{{object.title}}</h4>
       {% if object.modify_date %}
         <p class="pt-1">Created by {{object.author}} on {{object.modify_date}}</p>
@@ -13,7 +13,7 @@
       {% endif %}
       </div>
   
-      <div class="card-header">
+      <div class="card-header" style="color: black;">
         {% if object.file_upload %}
           <a href="{{object.file_upload.url}}" class="text-decoration-none text-muted" role="button" download>
             첨부파일 : <i class="fa-solid fa-file-lines me-2"></i>{{object.get_FileName}}</a>
