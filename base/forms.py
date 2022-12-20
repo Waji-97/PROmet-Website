@@ -20,13 +20,14 @@ class BaseCreateForm(forms.ModelForm):
   def __init__(self, *args, **kwargs):
     super().__init__(*args, **kwargs)
     self.fields['title'].widget.attrs.update({'class' : 'form-control'})
+    self.fields['email'].widget.attrs.update({'class' : 'form-control'})
     self.fields['file_upload'].widget.attrs.update({'class' : 'form-control'})
     self.fields['content'].widget.attrs.update({'class' : 'form-control', 'rows' : '20'})
     
     
   class Meta:
     model = Base
-    fields = ('title', 'file_upload', 'content') 
+    fields = ('title', 'email', 'file_upload', 'content') 
     
 class BaseUpdateForm(forms.ModelForm):
   def __init__(self, *args, **kwargs):

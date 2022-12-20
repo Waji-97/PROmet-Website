@@ -7,6 +7,7 @@ class Base(models.Model):
   content = models.TextField()
   file_upload = models.FileField(upload_to = 'base/data/%Y/%m/%d/', blank=True)
   author = models.ForeignKey(User, on_delete=models.CASCADE)
+  email = models.EmailField(max_length=20, default="")
   create_date = models.DateTimeField(auto_now_add=True)
   modify_date = models.DateTimeField(auto_now=True, null = True, blank=True)
   

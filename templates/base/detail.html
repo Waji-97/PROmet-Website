@@ -6,6 +6,7 @@
     <div class="card border-dark mb-3">
       <div class="card-header" style="color: black;">
         <h4 class="pt-1">{{object.title}}</h4>
+        <a href="mailto:{{object.email}}" style="color: rgb(56, 56, 56);">{{object.email}}</a>
       {% if object.modify_date %}
         <p class="pt-1">Created by {{object.author}} on {{object.modify_date}}</p>
       {% else %}
