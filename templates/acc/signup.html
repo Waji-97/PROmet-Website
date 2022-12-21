@@ -12,6 +12,12 @@
               <div class="input-group mb-4">
                 <input type="text" class="form-control" name="username" id="username" placeholder="ID" value="{{form.username.value | default_if_none:''}}">
               </div>
+             <div class="input-group mb-4">
+                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name" value="{{form.first_name.value | default_if_none:''}}">
+              </div>
+              <div class="input-group mb-4">
+                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name" value="{{form.last_name.value | default_if_none:''}}">
+              </div>
               <div class="input-group mb-4">
                 <input type="password" class="form-control" name="password1" id="password1" placeholder="Password" value="{{form.password1.value | default_if_none:''}}">
               </div>
@@ -31,7 +37,7 @@
         </div>
         <div class="col-lg-8">
           <div class="card">
-            <img class="card-img-top" src="https://static.pexels.com/photos/33972/pexels-photo.jpg" alt="...">
+            <img class="card-img-top" src="/static/base/images/img/signup.jpg" alt="...">
           </div>
         </div> 
       </div>

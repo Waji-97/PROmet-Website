@@ -22,7 +22,7 @@
         <tr class="text-center">
           <td>{{board.id}}</td>
           {% if user.is_authenticated %}
-            <td><a class="text-reset text-decoration-none" href="{{board.get_absolute_url}}">{{board.title}}</a></td>
+            <td><a class="text-decoration-none" style="color: rgb(249, 249, 249);" href="{{board.get_absolute_url}}">{{board.title}}</a></td>
           {% else %}
             <td><a class="login_check text-reset text-decoration-none">{{board.title}}</a></td>
           {% endif %}

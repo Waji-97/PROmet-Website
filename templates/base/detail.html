@@ -33,11 +33,11 @@
         <span>
           <a href="{% url 'base:update' object.id %}" class="btn btn-outline-dark">수정</a>
           <a href="{% url 'base:delete' object.id %}" class="delete btn btn-outline-dark">삭제</a>
+          <a href="{%url 'base:list'%}" class="btn btn-outline-dark">목록</a>
         </span>
         {% else %}
         <span>
-          <a href="#" class="user_check btn btn-outline-dark">수정</a>
-          <a href="#" class="user_check btn btn-outline-dark">삭제</a>
+          <a href="{%url 'base:list'%}" class="btn btn-outline-dark">목록</a>
         </span>
         {% endif %}
       </div>
