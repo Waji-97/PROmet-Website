@@ -16,7 +16,7 @@
   
       <div class="card-header" style="color: black;">
         {% if object.file_upload %}
-          <a href="{{object.file_upload.url}}" class="text-decoration-none text-muted" role="button" download>
+          <a href="{{object.file_upload.url}}" class="text-decoration-none text-muted" role="button">
             첨부파일 : <i class="fa-solid fa-file-lines me-2"></i>{{object.get_FileName}}</a>
         {% else %}
             <a class="text-decoration-none text-muted">첨부파일 : </a>
