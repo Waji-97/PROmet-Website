@@ -35,16 +35,21 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto">
-                {%if user.is_anonymous%}
+                {%if user.is_authenticated%}
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{%url 'news:news'%}">ABOUT</a></li>
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{%url 'base:create'%}">게시글 작성</a></li>
+                
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{%url 'base:list'%}">게시판</a></li>
+                
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{%url 'acc:logout'%}">로그아웃</a></li>   
+                {%else%}                    
                     <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{%url 'news:news'%}">ABOUT</a></li>
                     <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{%url 'acc:login'%}">로그인</a></li>
                     <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{%url 'acc:signup'%}">회원가입</a></li>
-                {%else%}
-                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{%url 'news:news'%}">ABOUT</a></li>
-                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{%url 'base:create'%}">게시글 작성</a></li>
-                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{%url 'base:list'%}">게시판</a></li>
-                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{%url 'acc:logout'%}">로그아웃</a></li>
                 {%endif%}
+                <!-- {%if user.is_superuser%} -->
+                <!-- 게시판 is between this if statement -->
+                <!-- {%endif%} -->
                 </ul>
             </div>
         </nav>

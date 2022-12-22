@@ -11,6 +11,7 @@ def signup(request):
       first_name = form.cleaned_data.get('first_name')
       last_name = form.cleaned_data.get('last_name')
       raw_password = form.cleaned_data.get('password1')
+      #form.cleaned_data.get('is_superuser')
       user = authenticate(username=username, first_name=first_name, last_name=last_name, password=raw_password)
       login(request, user)
       return redirect('/')
