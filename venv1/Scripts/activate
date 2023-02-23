@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\USER\Desktop\PROmet Project\venv1"
+VIRTUAL_ENV="C:\Users\wajiw\OneDrive\Desktop\Home\취업반\2. Programming\3조 PROmet Project\PROmet\venv1"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
