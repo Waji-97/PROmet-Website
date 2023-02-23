@@ -4,40 +4,25 @@
   
   <!-- Board 영역 -->
   <div class="container mt-5">
-    <table class="table table-striped">
-
-      <!-- Table Head 영역 -->
-      <thead class="thead-dark">
-        <tr class="text-center">
-          <th>번호</th>
-          <th style="width:50%">제목</th>
-          <th>글쓴이</th>
-          <th>작성일</th>
-        </tr>
-      </thead>
-
-      <!-- Table Body 영역 -->
-      <tbody>
-        {% for board in object_list %}
-        <tr class="text-center">
-          <td>{{board.id}}</td>
-          {% if user.is_authenticated %}
-            <td><a class="text-decoration-none" style="color: rgb(249, 249, 249);" href="{{board.get_absolute_url}}">{{board.title}}</a></td>
-          {% else %}
-            <td><a class="login_check text-reset text-decoration-none">{{board.title}}</a></td>
-          {% endif %}
-          <td>{{board.author}}</td>
-          {% if board.modify_date %}
-            <td>{{board.modify_date}}</td>
-          {% else %}
-            <td>{{board.create_date}}</td>
-          {% endif %}
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table><br>
+    <div class="card-deck">
+      {% for board in object_list %}
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">{{board.title}}</h5>
+            <p class="card-text">{{board.content}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-muted">{{board.author}}</small>
+              <small class="text-muted">{{board.create_date}}</small>
+            </div>
+            <a href="{{board.get_absolute_url}}" class="stretched-link"></a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  
     <!-- pagination 영역 -->
-
+    <br>
     {% if page_obj.paginator.count >= page_obj.paginator.per_page %}
     <ul class="pagination justify-content-center">
       {% if page_obj.has_previous %}
