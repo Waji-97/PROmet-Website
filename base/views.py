@@ -75,3 +75,6 @@ def Delete(request, pk):
       os.remove(file_upload_path)
   base.delete()
   return redirect('base:list')
+
+def jobs(request):
+  return render(request, 'base/jobs.html')
