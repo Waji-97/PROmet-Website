@@ -79,10 +79,26 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'PROmetDB',
+        'USER': 'main',
+        'PASSWORD': '1',
+        'HOST': 'promet-db-1.cayi9unj85zk.ap-northeast-2.rds.amazonaws.com',
+        'PORT': '3306'
+    },
+
+    'replica': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'PROmetDB',
+        'USER': 'replica',
+        'PASSWORD': '1',
+        'HOST': 'promet-db-2.cayi9unj85zk.ap-northeast-2.rds.amazonaws.com',
+        'PORT': '3306'
     }
 }
+
+USE_REPLICA_DATABASE = 'TRUE'
+DATABASE_ROUTERS=['config.router.ReplicaRouter']
 
 
 # Password validation
