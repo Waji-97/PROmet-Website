@@ -80,18 +80,18 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'PROmetDB',
-        'USER': 'main',
-        'PASSWORD': '1',
+        'NAME': 'prometdb',
+        'USER': 'admin',
+        'PASSWORD': 'admin13!#',
         'HOST': 'promet-db-1.cayi9unj85zk.ap-northeast-2.rds.amazonaws.com',
         'PORT': '3306'
     },
 
     'replica': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'PROmetDB',
-        'USER': 'replica',
-        'PASSWORD': '1',
+        'NAME': 'prometdb',
+        'USER': 'admin',
+        'PASSWORD': 'admin13!#',
         'HOST': 'promet-db-2.cayi9unj85zk.ap-northeast-2.rds.amazonaws.com',
         'PORT': '3306'
     }
