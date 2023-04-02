@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'prometdb',
         'USER': 'admin',
         'PASSWORD': 'admin13!#',
-        'HOST': 'promet-db-1.cayi9unj85zk.ap-northeast-2.rds.amazonaws.com',
+        'HOST': 'terraform-20230402074248336800000007.cayi9unj85zk.ap-northeast-2.rds.amazonaws.com',
         'PORT': '3306'
     },
 
@@ -92,7 +92,7 @@ DATABASES = {
         'NAME': 'prometdb',
         'USER': 'admin',
         'PASSWORD': 'admin13!#',
-        'HOST': 'promet-db-2.cayi9unj85zk.ap-northeast-2.rds.amazonaws.com',
+        'HOST': 'promet-db-read-replica-0.cayi9unj85zk.ap-northeast-2.rds.amazonaws.com',
         'PORT': '3306'
     }
 }
