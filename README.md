@@ -28,6 +28,7 @@ I have a detailed blog on deploying a django application on an EC2 instance. Fol
 
 [Hosting a Django Website on EC2](https://dev.to/waji97/hosting-a-django-website-on-ec2-part-1-4758)
 
+Also, I have included a `Dockerfile` and a `nginx.conf` file for deploying the app on a Docker container.
 
 ## Built With
 
