@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '3y!adrin&i(9k#axk_n3aruxum8t4-xs20e#doara%#a!zc)8b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -79,27 +79,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'prometdb',
-        'USER': 'admin',
-        'PASSWORD': 'admin13!#',
-        'HOST': 'terraform-20230402074248336800000007.cayi9unj85zk.ap-northeast-2.rds.amazonaws.com',
-        'PORT': '3306'
-    },
-
-    'replica': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'prometdb',
-        'USER': 'admin',
-        'PASSWORD': 'admin13!#',
-        'HOST': 'promet-db-read-replica-0.cayi9unj85zk.ap-northeast-2.rds.amazonaws.com',
-        'PORT': '3306'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-USE_REPLICA_DATABASE = 'TRUE'
-DATABASE_ROUTERS=['config.router.ReplicaRouter']
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -119,7 +102,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -137,9 +119,8 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-STATICFILES = [STATIC_ROOT]
+STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
